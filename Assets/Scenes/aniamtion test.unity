@@ -996,6 +996,10 @@ MonoBehaviour:
   gravity: 20
   attackRange: 1.34
   attackPoint: {fileID: 1466032915}
+  isAttacking: 0
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &1610219751
 Transform:
   m_ObjectHideFlags: 0
