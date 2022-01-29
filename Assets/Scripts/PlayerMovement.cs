@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     CharacterController characterController;
 
@@ -53,10 +53,10 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Euler(temp);
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        /*if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Attack();
-        }
+        }*/
     }
 
     private void FixedUpdate()
@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
 
     //#Combat System
 
-    void Attack()
+    /*void Attack()
     {      
         StartCoroutine(AttackAnimation());      
     }
@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
 
         isAttacking = false;
         Debug.Log("End Attack Coroutine");
-    }
+    }*/
 
     //#Gizmos Hitbox
 
