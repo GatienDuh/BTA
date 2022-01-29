@@ -18,15 +18,15 @@ public class PlayerCombat : MonoBehaviour
     void Update()
     {
 
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.2f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
         {
             anim.SetBool("hit1", false);
         }
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.2f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
         {
             anim.SetBool("hit2", false);
         }
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit3"))
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.2f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit3"))
         {
             anim.SetBool("hit3", false);
             noOfClicks = 0;
@@ -56,12 +56,12 @@ public class PlayerCombat : MonoBehaviour
         }
         noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
 
-        if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
+        if (noOfClicks >= 2 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
         {
             anim.SetBool("hit1", false);
             anim.SetBool("hit2", true);
         }
-        if (noOfClicks >= 3 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
+        if (noOfClicks >= 3 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
         {
             anim.SetBool("hit2", false);
             anim.SetBool("hit3", true);
