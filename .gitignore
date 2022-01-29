@@ -35,3 +35,24 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/Player 3D/material/shader game.unitypackage.meta
+Assets/QuickOutline/Samples/Materials/Plane.mat
+Logs/ApiUpdaterCheck.txt
+Logs/AssetImportWorker0-prev.log
+Logs/AssetImportWorker0.log
+Logs/Packages-Update.log
+Logs/shadercompiler-AssetImportWorker0.log
+Logs/shadercompiler-UnityShaderCompiler.exe0.log
+Logs/shadercompiler-UnityShaderCompiler.exe1.log
+Logs/shadercompiler-UnityShaderCompiler.exe10.log
+Logs/shadercompiler-UnityShaderCompiler.exe2.log
+Logs/shadercompiler-UnityShaderCompiler.exe3.log
+Logs/shadercompiler-UnityShaderCompiler.exe4.log
+Logs/shadercompiler-UnityShaderCompiler.exe5.log
+Logs/shadercompiler-UnityShaderCompiler.exe6.log
+Logs/shadercompiler-UnityShaderCompiler.exe7.log
+Logs/shadercompiler-UnityShaderCompiler.exe8.log
+Logs/shadercompiler-UnityShaderCompiler.exe9.log
+ProjectSettings/Packages/com.unity.probuilder/Settings.json
+ProjectSettings/URPProjectSettings.asset
+UserSettings/EditorUserSettings.asset
