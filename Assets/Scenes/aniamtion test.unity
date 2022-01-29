@@ -3950,7 +3950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7315705264610095226, guid: 94e4902a1ea19284f9e048fed26e11a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.12
+      value: 12.62
       objectReference: {fileID: 0}
     - target: {fileID: 7315705264610095226, guid: 94e4902a1ea19284f9e048fed26e11a5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3992,6 +3992,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1610219751}
+    - target: {fileID: 7315705264610095227, guid: 94e4902a1ea19284f9e048fed26e11a5, type: 3}
+      propertyPath: sightRange
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7315705264610095227, guid: 94e4902a1ea19284f9e048fed26e11a5, type: 3}
       propertyPath: walkPointRange
       value: 1.5
