@@ -8664,6 +8664,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4686486735981528233, guid: 26547f5b836d69e4ba5df6bda9274bec, type: 3}
+      propertyPath: outlineWidth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686486735981528233, guid: 26547f5b836d69e4ba5df6bda9274bec, type: 3}
       propertyPath: outlineColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -8681,15 +8685,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5080913214694446490, guid: 26547f5b836d69e4ba5df6bda9274bec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4
+      value: 3.15
       objectReference: {fileID: 0}
     - target: {fileID: 5080913214694446490, guid: 26547f5b836d69e4ba5df6bda9274bec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.81
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5080913214694446490, guid: 26547f5b836d69e4ba5df6bda9274bec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.95
+      value: -1.43
       objectReference: {fileID: 0}
     - target: {fileID: 5080913214694446490, guid: 26547f5b836d69e4ba5df6bda9274bec, type: 3}
       propertyPath: m_LocalRotation.w
