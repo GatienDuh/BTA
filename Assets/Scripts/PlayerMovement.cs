@@ -34,14 +34,14 @@ public class PlayerMovement : MonoBehaviour
         }
         moveDirection.y -= gravity * Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             Vector3 temp = transform.rotation.eulerAngles;
             temp.y = 0f;
             transform.rotation = Quaternion.Euler(temp);
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             Vector3 temp = transform.rotation.eulerAngles;
             temp.y = 180f;
