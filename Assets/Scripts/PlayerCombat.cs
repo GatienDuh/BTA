@@ -91,6 +91,11 @@ public class PlayerCombat : MonoBehaviour
             
             Destroy(gameObject, 1f);
         }
+
+        if (transform.position.y <= -0.5f)
+        {
+            Life = 0;
+        }
     }
 
     void OnClick()
@@ -224,7 +229,7 @@ public class PlayerCombat : MonoBehaviour
             foreach (Collider enemy in Enemies)
             {
                 //enemy.GetComponent<Animator>().SetTrigger("Hurt");
-                enemy.GetComponent<Monster>().health -= attackDamages;
+                enemy.GetComponent<Monster>().health -= attackDamages*3;
                 Debug.Log("Attack1");
             }
         }
@@ -245,7 +250,7 @@ public class PlayerCombat : MonoBehaviour
             foreach (Collider enemy in CacEnemies)
             {
                 //enemy.GetComponent<Animator>().SetTrigger("Hurt");
-                enemy.GetComponent<CaCMonster>().health -= attackDamages;
+                enemy.GetComponent<CaCMonster>().health -= attackDamages*3;
                 Debug.Log("Attack1Cac");
             }
         }
