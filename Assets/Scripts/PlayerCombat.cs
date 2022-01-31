@@ -134,8 +134,16 @@ public class PlayerCombat : MonoBehaviour
         {
             //enemy.GetComponent<Animator>().SetTrigger("Hurt");
             enemy.GetComponent<Monster>().health -= attackDamages;
-            enemy.GetComponent<CaCMonster>().health -= attackDamages;
             Debug.Log("Attack1");
+        }
+
+        Collider[] CacEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider enemy in CacEnemies)
+        {
+            //enemy.GetComponent<Animator>().SetTrigger("Hurt");
+            enemy.GetComponent<CaCMonster>().health -= attackDamages;
+            Debug.Log("Attack1Cac");
         }
 
         yield return new WaitForSeconds(0.1f);
@@ -154,8 +162,16 @@ public class PlayerCombat : MonoBehaviour
         {
             //enemy.GetComponent<Animator>().SetTrigger("Hurt");
             enemy.GetComponent<Monster>().health -= attackDamages;
-            enemy.GetComponent<CaCMonster>().health -= attackDamages;
             Debug.Log("Attack2");
+        }
+
+        Collider[] CacEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider enemy in CacEnemies)
+        {
+            //enemy.GetComponent<Animator>().SetTrigger("Hurt");
+            enemy.GetComponent<CaCMonster>().health -= attackDamages;
+            Debug.Log("Attack2Cac");
         }
 
         yield return new WaitForSeconds(0.1f);
@@ -174,8 +190,16 @@ public class PlayerCombat : MonoBehaviour
         {
             //enemy.GetComponent<Animator>().SetTrigger("Hurt");
             enemy.GetComponent<Monster>().health -= attackDamages;
-            enemy.GetComponent<CaCMonster>().health -= attackDamages;
             Debug.Log("Attack3");
+        }
+
+        Collider[] CacEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider enemy in CacEnemies)
+        {
+            //enemy.GetComponent<Animator>().SetTrigger("Hurt");
+            enemy.GetComponent<CaCMonster>().health -= attackDamages;
+            Debug.Log("Attack3Cac");
         }
 
         yield return new WaitForSeconds(0.5f);

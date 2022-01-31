@@ -104,9 +104,10 @@ public class CaCMonster : MonoBehaviour
 
         if (!alreadyAttacked)
         {
+            alreadyAttacked = true;
+
             Attack();
 
-            alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
     }
