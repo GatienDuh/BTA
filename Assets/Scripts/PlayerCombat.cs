@@ -19,6 +19,7 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public bool isAttacking = false;
     public LayerMask enemyLayers;
+    public LayerMask CaCEnemyLayers;
 
     private Animator anim;
     private float nextFireTime = 0f;
@@ -110,16 +111,19 @@ public class PlayerCombat : MonoBehaviour
     void Attack1()
     {
         StartCoroutine(AttackAnimation1());
+        StartCoroutine(CaCAttackAnimation1());
     }
 
     void Attack2()
     {
         StartCoroutine(AttackAnimation2());
+        StartCoroutine(CaCAttackAnimation2());
     }
 
     void Attack3()
     {
         StartCoroutine(AttackAnimation3());
+        StartCoroutine(CaCAttackAnimation3());
     }
 
     IEnumerator AttackAnimation1()
@@ -130,26 +134,41 @@ public class PlayerCombat : MonoBehaviour
 
         Collider[] Enemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 
-        foreach (Collider enemy in Enemies)
+        if (Enemies.Length != 0)
         {
-            //enemy.GetComponent<Animator>().SetTrigger("Hurt");
-            enemy.GetComponent<Monster>().health -= attackDamages;
-            Debug.Log("Attack1");
+            foreach (Collider enemy in Enemies)
+            {
+                //enemy.GetComponent<Animator>().SetTrigger("Hurt");
+                enemy.GetComponent<Monster>().health -= attackDamages;
+                Debug.Log("Attack1");
+            }
         }
-
-        Collider[] CacEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
-
-        foreach (Collider enemy in CacEnemies)
-        {
-            //enemy.GetComponent<Animator>().SetTrigger("Hurt");
-            enemy.GetComponent<CaCMonster>().health -= attackDamages;
-            Debug.Log("Attack1Cac");
-        }
-
+        
         yield return new WaitForSeconds(0.1f);
 
         isAttacking = false;
     }
+
+    IEnumerator CaCAttackAnimation1()
+    {
+        yield return new WaitForSeconds(0.7f);
+
+        Collider[] CacEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, CaCEnemyLayers);
+
+        if (CacEnemies.Length != 0)
+        {
+            foreach (Collider enemy in CacEnemies)
+            {
+                //enemy.GetComponent<Animator>().SetTrigger("Hurt");
+                enemy.GetComponent<CaCMonster>().health -= attackDamages;
+                Debug.Log("Attack1Cac");
+            }
+        }
+            
+
+        yield return new WaitForSeconds(0.1f);
+    }
+
     IEnumerator AttackAnimation2()
     {
         isAttacking = true;
@@ -158,26 +177,40 @@ public class PlayerCombat : MonoBehaviour
 
         Collider[] Enemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 
-        foreach (Collider enemy in Enemies)
+        if (Enemies.Length != 0)
         {
-            //enemy.GetComponent<Animator>().SetTrigger("Hurt");
-            enemy.GetComponent<Monster>().health -= attackDamages;
-            Debug.Log("Attack2");
-        }
-
-        Collider[] CacEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
-
-        foreach (Collider enemy in CacEnemies)
-        {
-            //enemy.GetComponent<Animator>().SetTrigger("Hurt");
-            enemy.GetComponent<CaCMonster>().health -= attackDamages;
-            Debug.Log("Attack2Cac");
+            foreach (Collider enemy in Enemies)
+            {
+                //enemy.GetComponent<Animator>().SetTrigger("Hurt");
+                enemy.GetComponent<Monster>().health -= attackDamages;
+                Debug.Log("Attack1");
+            }
         }
 
         yield return new WaitForSeconds(0.1f);
 
         isAttacking = false;
     }
+
+    IEnumerator CaCAttackAnimation2()
+    {
+        yield return new WaitForSeconds(0.7f);
+
+        Collider[] CacEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, CaCEnemyLayers);
+
+        if (CacEnemies.Length != 0)
+        {
+            foreach (Collider enemy in CacEnemies)
+            {
+                //enemy.GetComponent<Animator>().SetTrigger("Hurt");
+                enemy.GetComponent<CaCMonster>().health -= attackDamages;
+                Debug.Log("Attack1Cac");
+            }
+        }
+
+        yield return new WaitForSeconds(0.1f);
+    }
+
     IEnumerator AttackAnimation3()
     {
         isAttacking = true;
@@ -186,26 +219,40 @@ public class PlayerCombat : MonoBehaviour
 
         Collider[] Enemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 
-        foreach (Collider enemy in Enemies)
+        if (Enemies.Length != 0)
         {
-            //enemy.GetComponent<Animator>().SetTrigger("Hurt");
-            enemy.GetComponent<Monster>().health -= attackDamages;
-            Debug.Log("Attack3");
-        }
-
-        Collider[] CacEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
-
-        foreach (Collider enemy in CacEnemies)
-        {
-            //enemy.GetComponent<Animator>().SetTrigger("Hurt");
-            enemy.GetComponent<CaCMonster>().health -= attackDamages;
-            Debug.Log("Attack3Cac");
+            foreach (Collider enemy in Enemies)
+            {
+                //enemy.GetComponent<Animator>().SetTrigger("Hurt");
+                enemy.GetComponent<Monster>().health -= attackDamages;
+                Debug.Log("Attack1");
+            }
         }
 
         yield return new WaitForSeconds(0.5f);
 
         isAttacking = false;
     }
+
+    IEnumerator CaCAttackAnimation3()
+    {
+        yield return new WaitForSeconds(1f);
+
+        Collider[] CacEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, CaCEnemyLayers);
+
+        if (CacEnemies.Length != 0)
+        {
+            foreach (Collider enemy in CacEnemies)
+            {
+                //enemy.GetComponent<Animator>().SetTrigger("Hurt");
+                enemy.GetComponent<CaCMonster>().health -= attackDamages;
+                Debug.Log("Attack1Cac");
+            }
+        }
+
+        yield return new WaitForSeconds(0.5f);
+    }
+
 
     //#Gizmos Hitbox
     private void OnDrawGizmosSelected()
