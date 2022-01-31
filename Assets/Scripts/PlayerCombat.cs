@@ -134,6 +134,7 @@ public class PlayerCombat : MonoBehaviour
         {
             //enemy.GetComponent<Animator>().SetTrigger("Hurt");
             enemy.GetComponent<Monster>().health -= attackDamages;
+            enemy.GetComponent<CaCMonster>().health -= attackDamages;
             Debug.Log("Attack1");
         }
 
@@ -153,6 +154,7 @@ public class PlayerCombat : MonoBehaviour
         {
             //enemy.GetComponent<Animator>().SetTrigger("Hurt");
             enemy.GetComponent<Monster>().health -= attackDamages;
+            enemy.GetComponent<CaCMonster>().health -= attackDamages;
             Debug.Log("Attack2");
         }
 
@@ -172,6 +174,7 @@ public class PlayerCombat : MonoBehaviour
         {
             //enemy.GetComponent<Animator>().SetTrigger("Hurt");
             enemy.GetComponent<Monster>().health -= attackDamages;
+            enemy.GetComponent<CaCMonster>().health -= attackDamages;
             Debug.Log("Attack3");
         }
 
