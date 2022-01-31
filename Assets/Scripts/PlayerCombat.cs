@@ -22,10 +22,10 @@ public class PlayerCombat : MonoBehaviour
 
     private Animator anim;
     public float cooldownTime = 2f;
-    private float nextFireTime = 0.1f;
+    private float nextFireTime = 0f;
     public static int noOfClicks = 0;
     float lastClickedTime = 0;
-    float maxComboDelay = 2;
+    float maxComboDelay = 1;
 
     private void Start()
     {
@@ -36,15 +36,15 @@ public class PlayerCombat : MonoBehaviour
         float percent = (float)Life / (float)LifeMax;
         LifePercent.fillAmount = percent;
 
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.8f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.2f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit1"))
         {
             anim.SetBool("hit1", false);
         }
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.2f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
         {
             anim.SetBool("hit2", false);
         }
-        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.5f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit3"))
+        if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.2f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit3"))
         {
             anim.SetBool("hit3", false);
             noOfClicks = 0;
@@ -63,10 +63,10 @@ public class PlayerCombat : MonoBehaviour
             }
         }
         
-        if (isAttacking == true)
+        /*if (isAttacking == true)
         {
             characterController.Move(new Vector3(0, 0, 0));
-        }
+        }*/
     }
 
     void OnClick()
@@ -76,7 +76,7 @@ public class PlayerCombat : MonoBehaviour
         if (noOfClicks == 1)
         {
             anim.SetBool("hit1", true);
-            Attack1();
+            Attack();
         }
         noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
 
@@ -84,36 +84,26 @@ public class PlayerCombat : MonoBehaviour
         {
             anim.SetBool("hit1", false);
             anim.SetBool("hit2", true);
-            Attack2();
+            Attack();
         }
         if (noOfClicks >= 3 && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && anim.GetCurrentAnimatorStateInfo(0).IsName("hit2"))
         {
             anim.SetBool("hit2", false);
             anim.SetBool("hit3", true);
-            Attack3();
+            Attack();
         }
     }
 
-    void Attack1()
+    void Attack()
     {      
-        StartCoroutine(AttackAnimation1());      
+        StartCoroutine(AttackAnimation());      
     }
 
-    void Attack2()
-    {
-        StartCoroutine(AttackAnimation2());
-    }
-
-    void Attack3()
-    {
-        StartCoroutine(AttackAnimation3());
-    }
-
-    IEnumerator AttackAnimation1()
+    IEnumerator AttackAnimation()
     {
         isAttacking = true;
 
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.8f);
         
         Collider[] Enemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
 
@@ -121,45 +111,7 @@ public class PlayerCombat : MonoBehaviour
         {
             //enemy.GetComponent<Animator>().SetTrigger("Hurt");
             enemy.GetComponent<Monster>().health -= attackDamages;
-            Debug.Log("Attack1");
-        }
-
-        yield return new WaitForSeconds(0.4f);
-
-        isAttacking = false;
-    }
-    IEnumerator AttackAnimation2()
-    {
-        isAttacking = true;
-
-        yield return new WaitForSeconds(0.2f);
-
-        Collider[] Enemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
-
-        foreach (Collider enemy in Enemies)
-        {
-            //enemy.GetComponent<Animator>().SetTrigger("Hurt");
-            enemy.GetComponent<Monster>().health -= attackDamages;
-            Debug.Log("Attack2");
-        }
-
-        yield return new WaitForSeconds(0.5f);
-
-        isAttacking = false;
-    }
-    IEnumerator AttackAnimation3()
-    {
-        isAttacking = true;
-
-        yield return new WaitForSeconds(0.7f);
-
-        Collider[] Enemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
-
-        foreach (Collider enemy in Enemies)
-        {
-            //enemy.GetComponent<Animator>().SetTrigger("Hurt");
-            enemy.GetComponent<Monster>().health -= attackDamages;
-            Debug.Log("Attack3");
+            Debug.Log("Attack");
         }
 
         yield return new WaitForSeconds(0.8f);
@@ -168,6 +120,7 @@ public class PlayerCombat : MonoBehaviour
     }
 
     //#Gizmos Hitbox
+
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)

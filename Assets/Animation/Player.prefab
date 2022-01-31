@@ -2900,13 +2900,12 @@ GameObject:
   - component: {fileID: 6992115468619141504}
   - component: {fileID: 6992115468619141505}
   - component: {fileID: 8314953729804088285}
-  - component: {fileID: 5532988671575364449}
   - component: {fileID: 6671410983243378015}
   - component: {fileID: 6992115468619141508}
   - component: {fileID: 6992115468619141519}
   - component: {fileID: 6992115468619141506}
   - component: {fileID: 6992115468619141507}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2969,21 +2968,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   cooldownTime: 2
---- !u!114 &5532988671575364449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6992115468619141510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f956f646d37ee740bb71dcac16b6877, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bullets:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!95 &6671410983243378015
 Animator:
   serializedVersion: 3
