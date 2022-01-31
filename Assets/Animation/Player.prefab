@@ -2958,16 +2958,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 6992115468619141519}
   attackDamages: 1
-  Life: 2
-  LifeMax: 3
+  Life: 5
+  LifeMax: 5
   LifePercent: {fileID: 8785593323030235890}
-  attackRange: 1.84
+  attackRange: 2
   attackPoint: {fileID: 6992115468476953204}
   isAttacking: 0
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
-  cooldownTime: 2
+  maxComboDelay: 0.8
 --- !u!95 &6671410983243378015
 Animator:
   serializedVersion: 3

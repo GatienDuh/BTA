@@ -50,7 +50,7 @@ public class Monster : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(this.gameObject, 0.2f);
+            Destroy(this.gameObject);
         }
     }
 
