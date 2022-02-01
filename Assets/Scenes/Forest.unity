@@ -41,10 +41,14 @@ RenderSettings:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.013815644, g: 0.013212872, b: 0.033570573, a: 1}
 =======
   m_IndirectSpecularColor: {r: 0.013956462, g: 0.013353724, b: 0.03371142, a: 1}
 >>>>>>> 689824bca6a5e085a837c73789b0b9947ba5ed06
+=======
+  m_IndirectSpecularColor: {r: 0.013847887, g: 0.013245207, b: 0.033602923, a: 1}
+>>>>>>> parent of 689824b (Ajouts assets et concepts)
 =======
   m_IndirectSpecularColor: {r: 0.013847887, g: 0.013245207, b: 0.033602923, a: 1}
 >>>>>>> parent of 689824b (Ajouts assets et concepts)
